@@ -1,7 +1,8 @@
 ## Your Info:
 
-Matric Number:  
-Name:
+Matric Number: 299292
+
+Name: SITI NOR FARRISHA BINTI AHMAD SHUKOR
 
 ## Objective
 
@@ -52,6 +53,20 @@ https://<yourusername>.github.io/my-resume-site/
 
 ## Link of YouTube References (at least five references)
 
+1.Learn HTML & CSS – Full Course for Beginners, freeCodeCamp.org
+https://www.youtube.com/watch?v=a_iQb1lnAEQ
+
+2.HTML Tutorial for Beginners – HTML Crash Course, Programming with Mosh
+https://www.youtube.com/watch?v=qz0aGYrrlhU
+
+3.HTML & CSS Full Course – Beginner to Pro, SuperSimpleDev
+https://www.youtube.com/watch?v=G3e-cpL7ofc
+
+4.Getting Started with GitHub Pages for Beginners, GitHub
+https://www.youtube.com/watch?v=b2r9Cdvssi0
+
+5.Host Your Website for Free with GitHub Pages, Coder Coder
+https://www.youtube.com/watch?v=M_x2r36WC4s
 
 
 

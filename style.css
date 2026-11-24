@@ -1,0 +1,977 @@
+
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+:root {
+    --navy: #16324B;
+    --navy-light: #254761;
+    --butter: #F3EDDD;
+    --white: #FFFFFF;
+    --text: #344454;
+    --muted: #77818B;
+    --border: #E8E8E8;
+    --shadow: 0 8px 30px rgba(22, 50, 75, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================
+   2. NAVIGATION BAR
+========================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--navy);
+}
+
+.logo span {
+    color: #B79C64;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--navy);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--navy);
+    left: 0;
+    bottom: -7px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 580px;
+    padding: 90px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.hero-content {
+    flex: 1.3;
+}
+
+.eyebrow {
+    color: #A18A5B;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero h1 span,
+.page-hero h1 span,
+.interest-content h2 span {
+    color: #A18A5B;
+}
+
+.hero h2 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy-light);
+    margin-bottom: 18px;
+}
+
+.hero-description {
+    max-width: 570px;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--navy-light);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: var(--butter);
+    color: var(--navy);
+}
+
+.btn-secondary:hover {
+    background: #E9DFC6;
+    transform: translateY(-3px);
+}
+
+.availability {
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.hero-image {
+    flex: 0 0 310px;
+    width: 310px;
+    height: 390px;
+    background: var(--butter);
+    border-radius: 160px 160px 15px 15px;
+    overflow: hidden;
+    border: 8px solid var(--butter);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   4. PAGE HERO
+========================================= */
+
+.page-hero {
+    padding: 100px 10%;
+    text-align: center;
+    background: var(--butter);
+}
+
+.page-hero h1 {
+    color: var(--navy);
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.page-hero > p:last-child {
+    max-width: 650px;
+    margin: auto;
+    color: var(--text);
+}
+
+
+/* =========================================
+   5. GENERAL CONTENT SECTIONS
+========================================= */
+
+.content-section {
+    padding: 85px 10%;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    color: var(--navy);
+}
+
+.about-card {
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--navy);
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.about-card p {
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   6. EDUCATION TIMELINE
+========================================= */
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.timeline-card {
+    padding: 30px;
+    background: var(--butter);
+    border-radius: 12px;
+    border-top: 4px solid var(--navy);
+}
+
+.timeline-date {
+    color: #927A4D;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.timeline-card h3 {
+    color: var(--navy);
+    font-size: 20px;
+    margin: 15px 0 8px;
+}
+
+.qualification {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.timeline-card h4 {
+    margin-top: 18px;
+    color: var(--navy);
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin-top: 12px;
+}
+
+.tag-list li {
+    padding: 7px 12px;
+    background: var(--white);
+    border-radius: 5px;
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   7. HORIZONTAL SCROLLING
+========================================= */
+
+.horizontal-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 25px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--navy) var(--butter);
+}
+
+.horizontal-scroll > * {
+    flex: 0 0 260px;
+    scroll-snap-align: start;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 7px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+    background: var(--butter);
+    border-radius: 10px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: var(--navy);
+    border-radius: 10px;
+}
+
+.skill-card {
+    padding: 28px;
+    background: var(--butter);
+    border-radius: 12px;
+    min-height: 220px;
+    transition: 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.skill-card h3 {
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.skill-card ul {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 2;
+}
+
+
+/* =========================================
+   8. ACADEMIC PROJECT
+========================================= */
+
+.project-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 35px;
+    border-radius: 12px;
+    background: var(--navy);
+    color: var(--white);
+}
+
+.project-number {
+    font-size: 35px;
+    font-weight: 800;
+    color: #D9C69E;
+}
+
+.project-card h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.project-subtitle {
+    color: #E8D9B8;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   9. SOFT SKILLS
+========================================= */
+
+.soft-skill-card {
+    padding: 25px;
+    background: var(--butter);
+    color: var(--navy);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.soft-skill-card:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+
+
+/* =========================================
+   10. LANGUAGES
+========================================= */
+
+.language-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.language-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.language-card h3 {
+    color: var(--navy);
+    font-size: 21px;
+}
+
+.language-card p {
+    color: #A18A5B;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   11. HOBBIES PAGE
+========================================= */
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.hobby-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    transition: 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+    border-color: var(--navy);
+}
+
+.hobby-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--butter);
+    color: var(--navy);
+    font-weight: 800;
+    border-radius: 50%;
+    margin-bottom: 22px;
+}
+
+.hobby-card h3 {
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.hobby-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   12. INTEREST SECTION
+========================================= */
+
+.interest-section {
+    padding: 75px 10%;
+    background: var(--butter);
+    text-align: center;
+}
+
+.interest-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.interest-content h2 {
+    color: var(--navy);
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.interest-content > p:not(.eyebrow) {
+    color: var(--text);
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   13. CONTACT PAGE
+========================================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.contact-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: 0.3s ease;
+    min-width: 0;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--navy);
+}
+
+.contact-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--butter);
+    color: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.contact-card h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.contact-card a,
+.contact-card span {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    color: #A18A5B;
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   14. FOOTER
+========================================= */
+
+.footer {
+    padding: 30px 10%;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer p + p {
+    color: #D5C9AD;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   15. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 70px 7%;
+        gap: 35px;
+    }
+
+    .hero-image {
+        flex-basis: 250px;
+        width: 250px;
+        height: 330px;
+    }
+
+    .hobbies-grid,
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-section {
+        padding: 70px 7%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 7%;
+        gap: 35px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 220px;
+        height: 280px;
+    }
+
+    .availability {
+        line-height: 1.8;
+    }
+
+    .page-hero {
+        padding: 70px 7%;
+    }
+
+    .content-section {
+        padding: 60px 7%;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .timeline,
+    .hobbies-grid,
+    .contact-grid,
+    .language-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        flex-direction: column;
+    }
+
+    .interest-section {
+        padding: 60px 7%;
+    }
+
+    .interest-content h2 {
+        font-size: 29px;
+    }
+
+    .footer {
+        padding: 25px 7%;
+    }
+
+}
+
+
+/* TECHNICAL SKILLS INTERACTIVE DESIGN */
+
+.section-description {
+    color: #777777;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+.skill-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.skill-filter-btn {
+    padding: 10px 18px;
+    border: 1px solid #e5dfd2;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #16324B;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.skill-filter-btn:hover,
+.skill-filter-btn.active {
+    background: #16324B;
+    color: #ffffff;
+    border-color: #16324B;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.skill-item {
+    background: #ffffff;
+    border: 1px solid #eee9df;
+    border-radius: 18px;
+    padding: 25px 16px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(22, 50, 75, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(22, 50, 75, 0.10);
+    border-color: #d9cba9;
+}
+
+.skill-item h3 {
+    color: #16324B;
+    font-size: 15px;
+    margin: 14px 0 6px;
+}
+
+.skill-item p {
+    color: #888888;
+    font-size: 12px;
+}
+
+.skill-logo {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: 800;
+    background: #F3EDDD;
+    color: #16324B;
+}
+
+.python-logo { background: #e8edf5; color: #356b9a; }
+.java-logo { background: #f8e9e2; color: #b64b35; }
+.sql-logo { background: #e5edf2; color: #315d78; }
+.html-logo { background: #fce8df; color: #d85b2b; }
+.css-logo { background: #e5ecfa; color: #315eaa; }
+.js-logo { background: #fff4c9; color: #8a6a00; }
+.idea-logo { background: #f0e8f8; color: #8051a5; }
+.vscode-logo { background: #e3f1fa; color: #2876a8; }
+.netbeans-logo { background: #e9eaf5; color: #454c82; }
+.github-logo { background: #e9e9e9; color: #24292f; }
+.excel-logo { background: #e2f1e8; color: #217346; }
+.word-logo { background: #e4edf9; color: #2b579a; }
+.powerpoint-logo { background: #fae8df; color: #c74726; }
+.trados-logo { background: #e8edf5; color: #315d78; }
+.antconc-logo { background: #f3eddd; color: #8a7044; }
+.subtitle-logo { background: #e5edf2; color: #315d78; }
+.canva-logo { background: #e4f3f2; color: #168b8b; }
+
+.skill-item.hidden {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .skill-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .skill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .skill-item {
+        padding: 20px 10px;
+    }
+
+    .skill-filter {
+        gap: 8px;
+    }
+
+    .skill-filter-btn {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+}
+
+
+/* SOFT SKILLS CARD DESIGN */
+
+.soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.soft-skill-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px 24px;
+    background: #ffffff;
+    border: 1px solid #eee9df;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(22, 50, 75, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soft-skill-card::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -35px;
+    bottom: -40px;
+    background: #F3EDDD;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.soft-skill-card:hover {
+    transform: translateY(-7px);
+    border-color: #d9cba9;
+    box-shadow: 0 14px 28px rgba(22, 50, 75, 0.10);
+}
+
+.soft-skill-card:hover::after {
+    transform: scale(1.5);
+}
+
+.soft-skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    background: #F3EDDD;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.soft-skill-card h3 {
+    color: #16324B;
+    font-size: 17px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.soft-skill-card p {
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 260px;
+    position: relative;
+    z-index: 1;
+}
+
+.soft-skill-number {
+    position: absolute;
+    top: 25px;
+    right: 24px;
+    color: #b8aa8d;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .soft-skills-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .soft-skill-card {
+        min-height: 190px;
+    }
+}
